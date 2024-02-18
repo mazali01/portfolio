@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Mazal</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="common.css">
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet"
+        type="text/css" />
+</head>
+
+<body>
+
+    <nav>
+        <img src="images/Mazal_logo.png" class="logo" alt="mazal">
+        <ul class="desktop">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/education.html">Education</a></li>
+            <li><a href="/hobbies.html">Hobbies</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile">
+            <div class="hamburger">
+                <span class="close"></span>
+                <span class="close"></span>
+                <span class="close"></span>
+            </div>
+            <ul class="hidden">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/education.html">Education</a></li>
+                <li><a href="/hobbies.html">Hobbies</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <script src="common.js"></script>
+    </nav>
+    <div class="page">
+        <div class="container">
+            <div class="contact-left">
+                <span><i class="fa-light fa-envelope"></i> mazal.iliad@gmail.com</span>
+                <span<i class="fa-solid fa-phone"></i> 053-9106434</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/mazal-iliadjanov/" class="social">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/mazal.iliadjanov.7/" class="social">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mazal___a/" class="social">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=0539106434" class="social">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+            </div>
+            <div class="divider"></div>
+            <div class="contact-right">
+                <h1 class="title">Contact Me</h1>
+                <form onsubmit="return submitForm()" name="EmailForm" class="contact-form" accept-charset="UTF-8">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <textarea name="body" id="body" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" onclick="setSubject()" value="Submit" class="btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function setSubject() {
+            var name = document.querySelector("#name").value;
+            var body = document.querySelector("#body").value;
+            if (body.length < 3 || body.length > 50)
+                return false;
+            var subject = "Please contact me, my name is: " + name;
+            var link = "mailto:mazal.iliad@gmail.com"
+                + "?subject=" + encodeURIComponent(subject)
+                + "&body=" + encodeURIComponent(body);
+            window.location.href = link;
+            return true;
+        }
+    </script>
+</body>
+
+</html>

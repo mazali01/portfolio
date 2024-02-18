@@ -1,0 +1,155 @@
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5em;
+  gap: 3em;
+  padding: 2em;
+}
+
+.about-col-1 {
+  flex-basis: 35%;
+}
+
+.about-image {
+  width: 35em;
+  border-radius: 15%;
+}
+
+.about-col-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.sub-title span {
+  color: #f5c8bd;
+}
+
+.about-me {
+  width: 80%;
+  font-size: 1.5em;
+}
+
+.tab-titles {
+  display: flex;
+  margin: 1em 0;
+  gap: 5em;
+}
+
+.tab-links {
+  font-size: 1.5em;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-links::after {
+  content: "";
+  width: 0%;
+  margin: 0 50%;
+  height: 0.2em;
+  background: #fb7c5c;
+  position: absolute;
+  left: 0;
+  bottom: -0.5em;
+  transition: all 0.2s;
+}
+
+.tab-links.active-link::after {
+  width: 100%;
+  margin: 0;
+  background: #f5c8bd;
+}
+
+.tab-links:hover::after {
+  width: 100%;
+  margin: 0;
+}
+
+.tab-contents ul {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.ach-img-first {
+  position: absolute;
+  width: 20em;
+  opacity: 0;
+  transform: rotate(15deg);
+  animation: ach-img-anim-first 1s forwards;
+}
+.ach-img-second {
+  position: absolute;
+  width: 20em;
+  opacity: 0;
+  transform: translate(22em, 2em) rotate(-10deg);
+  animation: ach-img-anim-second 1s 1.5s forwards;
+}
+.ach-img-third {
+  position: absolute;
+  width: 20em;
+  opacity: 0;
+  transform: translate(12em, 15em);
+  animation: ach-img-anim-third 1s 3s forwards;
+}
+
+@keyframes ach-img-anim-first {
+  0% {
+    transform: scale(1.2) rotate(15deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(15deg);
+    opacity: 1;
+  }
+}
+
+@keyframes ach-img-anim-second {
+  0% {
+    transform: scale(1.2) translate(22em, 2em) rotate(-10deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(22em, 2em) rotate(-10deg);
+    opacity: 1;
+  }
+}
+
+@keyframes ach-img-anim-third {
+  0% {
+    transform: scale(1.2) translate(12em, 15em);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(12em, 15em);
+    opacity: 1;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    margin-top: 3em;
+  }
+  
+  .about-image {
+    width: 100%;
+  }
+
+  .about-me {
+    width: 100%;
+    font-size: 1.2em;
+  }
+
+  .tab-titles {
+    flex-direction: column;
+  }
+}
